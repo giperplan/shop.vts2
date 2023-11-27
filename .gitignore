@@ -3,3 +3,4 @@ core/*
 /cont/
 /cont/*
 config.php
+.htaccess
