@@ -3,7 +3,7 @@
 error_reporting(E_ALL | E_STRICT & ~E_WARNING & ~E_NOTICE);
 
 // Обязательно!
-$basehref='https://test-shop-vts.188.giperplan.com/';
+$basehref='http://test-shop-vts.188.giperplan.com/';
 $adminlogin='admin';
 $adminpass='GuDcIJyERz';
 
