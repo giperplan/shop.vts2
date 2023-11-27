@@ -1,0 +1,41 @@
+DirectoryIndex index.php
+Options -Indexes 
+ 
+php_flag display_errors off 
+php_value error_reporting 30711
+#php_value magic_quotes_gpc Off
+
+#php_value session.use_trans_sid 0
+#php_value session.use_only_cookies 1
+#AddDefaultCharset utf-8
+#AddCharset utf-8 .html .css .js
+
+# gzip сжатие.
+<IfModule mod_deflate.c>
+
+# html, txt, css, js, json, xml, htc:
+AddOutputFilterByType DEFLATE text/html text/plain text/css application/json
+AddOutputFilterByType DEFLATE text/javascript application/javascript application/x-javascript
+AddOutputFilterByType DEFLATE text/xml application/xml text/x-component
+
+# веб-шрифты и svg:
+<FilesMatch "\.(ttf|otf|eot|svg)$" >
+    SetOutputFilter DEFLATE
+</FilesMatch>
+</IfModule>
+
+
+RewriteEngine on
+RewriteBase /
+
+RewriteRule ^favicon\.ico$  cont/img/favicon.ico
+RewriteRule ^sitemap\.xml$  cont/files/sitemap.xml
+RewriteRule ^robots\.txt$  cont/files/robots.txt
+# site.ru/page1
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+# site.ru//mypage.php?page1
+
+SetEnv downgrade-1.0 1
+
