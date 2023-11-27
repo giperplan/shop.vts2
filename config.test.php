@@ -1,16 +1,16 @@
-<?
+<?php
 
 error_reporting(E_ALL | E_STRICT & ~E_WARNING & ~E_NOTICE);
 
 // Обязательно!
-$basehref='http://shop.vts.loc';
+$basehref='https://test-shop-vts.188.giperplan.com/';
 $adminlogin='admin';
 $adminpass='GuDcIJyERz';
 
 $host_db='localhost';
-$user_db='root';
-$pass_db='';
-$base_db='shop_vts';
+$user_db='demosite_shop_vts';
+$pass_db='URQOZ6oSKF';
+$base_db='demosite_shop_vts';
 $port_db='3306';
 define('pref_db','shvts__');
 
